@@ -45,12 +45,14 @@ function SigninScreen({ navigation }) {
             <TextInput
                 style={styles.input}
                 placeholder="Email"
+                placeholderTextColor='black'
                 value={email}
                 onChangeText={setEmail}
             />
             <TextInput
                 style={styles.input}
                 placeholder="Password"
+                placeholderTextColor='black'
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
@@ -75,6 +77,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginBottom: 16,
         paddingHorizontal: 8,
+        color:'black'
     },
     button: {
         marginBottom: 16,

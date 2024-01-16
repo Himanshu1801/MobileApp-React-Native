@@ -49,8 +49,8 @@ function UsersScreen({ navigation }) {
                 userData.map((user) => (
                     <View key={user._id} style={styles.userContainer}>
                         <Text style={styles.name}>Name: {user?.name} {(user.isAdmin)?'(admin)':''}</Text>
-                        <Text>Age: {user?.age}</Text>
-                        <Text>Email: {user?.emailId}</Text>
+                        <Text style={styles.age}>Age: {user?.age}</Text>
+                        <Text style={styles.email}>Email: {user?.emailId}</Text>
                         {isAdmin ? (
                             (user.emailId !== loggedUser.emailId) ? (
                                 <TouchableOpacity onPress={() => handleDelete(user._id)}>
@@ -85,8 +85,9 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
     },
     name: {
-        fontWeight: '900',
+        fontWeight: '800',
         fontSize: 18,
+        color:'black'
     },
     editText: {
         color: 'blue',
@@ -96,6 +97,12 @@ const styles = StyleSheet.create({
         color: 'red',
         marginTop: 5,
     },
+    age : {
+        color:'black'
+    },
+    email:{
+        color:'black'
+    }
 });
 
 export default UsersScreen;

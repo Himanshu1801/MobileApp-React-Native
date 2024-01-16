@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         marginVertical: 8,
+        color:'black'
     },
     input: {
         height: 40,
@@ -108,6 +109,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginBottom: 16,
         paddingHorizontal: 8,
+        color:'black'
     },
 });
 
