@@ -21,7 +21,7 @@ function SigninScreen({ navigation }) {
             };
 
             const response = await axios.post(
-                'http://10.0.2.2:3000/authenticate',
+                'https://app-react-native.onrender.com/authenticate',
                 user
             );
             const token = response.data.token;

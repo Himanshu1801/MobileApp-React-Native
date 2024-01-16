@@ -10,7 +10,7 @@ function UsersScreen({ navigation }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://10.0.2.2:3000/users');
+                const response = await axios.get('https://app-react-native.onrender.com/users');
 
                 if (response.status !== 200) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -31,7 +31,7 @@ function UsersScreen({ navigation }) {
 
     const handleDelete = async (userId) => {
         try {
-            const response = await axios.delete(`http://10.0.2.2:3000/users/${userId}`);
+            const response = await axios.delete(`https://app-react-native.onrender.com/users/${userId}`);
 
             if (response.status !== 200) {
                 throw new Error(`HTTP error! Status: ${response.status}`);

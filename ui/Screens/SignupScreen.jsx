@@ -19,7 +19,7 @@ function SignupScreen({ navigation }) {
                 password: password,
             };
 
-            const response = await axios.post('http://10.0.2.2:3000/users', newUser);
+            const response = await axios.post('https://app-react-native.onrender.com/users', newUser);
 
             Alert.alert('Successfully Signed Up');
 

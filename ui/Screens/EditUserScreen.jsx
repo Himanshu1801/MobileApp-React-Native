@@ -14,7 +14,7 @@ const EditUser = ({ route, navigation }) => {
 
     const fetchUserData = async () => {
         try {
-            const response = await axios.get(`http://10.0.2.2:3000/users/${userId}`);
+            const response = await axios.get(`https://app-react-native.onrender.com/users/${userId}`);
 
             if (response.status !== 200) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -37,7 +37,7 @@ const EditUser = ({ route, navigation }) => {
 
     const handleSaveChanges = async () => {
         try {
-            const response = await axios.put(`http://10.0.2.2:3000/users/${userId}`, editedUser);
+            const response = await axios.put(`https://app-react-native.onrender.com/users/${userId}`, editedUser);
 
             if (response.status !== 200) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
