@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 const connectToDB = async () => {
   try{
-    await mongoose.connect("mongodb://localhost/mobileApp")
+    await mongoose.connect(process.env.MONGOURL)
     console.log('connected to DB')
   }
   catch(e){
@@ -20,7 +20,7 @@ const connectToDB = async () => {
 
 app.use(bodyParser.json());
 
-// connectToDB();
+connectToDB();
 
 app.get("/users", async (req, res) => {
   try {
@@ -138,7 +138,7 @@ app.use((req, res) => {
 });
 
 if (process.env.NODE_ENV !== 'test') {
-  app.listen({PORT}, () => {
+  app.listen(PORT, () => {
       console.log("Server up and running");
   });
 }

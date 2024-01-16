@@ -1,5 +1,5 @@
 import React from 'react';
-import AppNav from './navigator/AppNav';
+import AppNav from './navigator/AppNav'
 import { AuthProvider } from './context/AuthContext';
 
 
