@@ -27,7 +27,7 @@ connectToDB();
 app.get("/users", async (req, res) => {
   try {
     const users = await User.find();
-    res.json(users);
+    res.send(users);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
@@ -36,7 +36,7 @@ app.get("/users", async (req, res) => {
 app.get("/users/:id", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
-    res.json(user);
+    res.send(user);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
@@ -64,7 +64,7 @@ app.post("/users", async (req, res) => {
       password: newUser.password,
     });
 
-    res.json(savedUser);
+    res.send(savedUser);
   } catch (error) {
     console.error("Error saving user:", error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -86,7 +86,7 @@ app.put("/users/:id", async (req, res) => {
 
     const savedUser = await user.save();
 
-    res.json(savedUser);
+    res.send(savedUser);
   } catch (error) {
     console.log("Error saving user:", error);
     res.status(500).json({ error: "Internal Server Error" });
