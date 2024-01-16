@@ -1,8 +1,7 @@
 const request = require("supertest");
 const mongoose = require("mongoose");
-const app = require("../server"); // Replace with the actual filename where your Express app is defined
+const app = require("../server");
 
-// Ensure you set NODE_ENV to 'test' to use a separate test database
 process.env.NODE_ENV = "test";
 
 beforeAll(async () => {
@@ -56,7 +55,6 @@ describe("POST /users", () => {
 
     const createdUserId = response.body._id;
 
-    // Clean up: Delete the user created during the test
     await request(app).delete(`/users/${createdUserId}`);
   });
 
@@ -97,7 +95,6 @@ describe("PUT /users/:id", () => {
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty("_id", userIdToUpdate);
 
-    // Clean up: Delete the user created during the test
     await request(app).delete(`/users/${userIdToUpdate}`);
   });
 });
