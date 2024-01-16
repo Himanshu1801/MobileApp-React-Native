@@ -4,8 +4,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const User = require("./userModel");
 const jwt = require("jsonwebtoken");
+const cors = require("cors")
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 const connectToDB = async () => {
